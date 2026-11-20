@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <title>TaxAtlas — U.S. Tax & EA Study Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="TaxAtlas home">
+        <span class="brand-mark">T</span><span><strong>TaxAtlas</strong><small>U.S. TAX & EA STUDY LAB</small></span>
+      </a>
+      <div class="side-label">LEARNING WORKSPACE</div>
+      <nav id="main-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-page="overview"><span>◫</span> Overview</button>
+        <button class="nav-item" data-page="forms"><span>▤</span> Forms directory <b class="nav-count">A</b></button>
+        <button class="nav-item" data-page="individuals"><span>◎</span> Individual taxation</button>
+        <button class="nav-item" data-page="business"><span>▦</span> Business taxation</button>
+        <button class="nav-item" data-page="jurisdictions"><span>⌖</span> Tax jurisdictions</button>
+        <button class="nav-item" data-page="representation"><span>⚖</span> Representation & ethics</button>
+        <button class="nav-item" data-page="calendar"><span>▦</span> 2026 tax calendar</button>
+        <div class="side-label side-label-spaced">STUDY TOOLS</div>
+        <button class="nav-item" data-page="flashcards"><span>▣</span> Flashcards</button>
+        <button class="nav-item" data-page="blueprint"><span>◷</span> EA exam blueprint</button>
+        <button class="nav-item" data-page="practice"><span>⌁</span> Practice lab</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="progress-card"><span class="eyebrow">YOUR STUDY PATH</span><strong>Build tax confidence</strong><p>Learn a rule, see it applied, then retrieve it from memory.</p><div class="progress-track"><i style="width:18%"></i></div><small>Starter workspace · 18%</small></div>
+        <div class="sidebar-foot">Independent study tool · Not tax advice</div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="icon-btn mobile-menu" id="menu-toggle" aria-label="Toggle navigation">☰</button>
+        <div class="crumb"><span>Workspace</span><b>/</b><strong id="crumb-current">Overview</strong></div>
+        <div class="top-actions">
+          <label class="global-search"><span>⌕</span><input id="global-search" type="search" placeholder="Search forms, terms, rules… ( / )" autocomplete="off"><kbd>/</kbd></label>
+          <span class="year-chip">TAX YEAR <b>2026</b></span>
+        </div>
+      </header>
+      <section id="search-panel" class="search-panel hidden" aria-live="polite"></section>
+      <div class="page-wrap">
+        <section id="page-overview" class="page active">
+          <div class="hero">
+            <div><span class="eyebrow light">THE TAX LEARNING WORKSPACE</span><h1>Understand the rules.<br><em>Master the return.</em></h1><p>A structured study environment for U.S. federal taxation and the IRS Enrolled Agent examination.</p><div class="hero-actions"><button class="btn btn-light" data-go="forms">Explore tax forms <span>→</span></button><button class="btn btn-ghost" data-go="blueprint">View EA exam map</button></div></div>
+            <div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="hero-doc"><span>IRS</span><strong>1040</strong><small>U.S. Individual<br>Income Tax Return</small><div class="doc-lines"></div><div class="doc-lines short"></div><div class="doc-stamp">2026</div></div><div class="floating-note">§ 199A <small>Qualified business income</small></div><div class="floating-rate">37%<small>Top marginal rate*</small></div></div>
+          </div>
+          <div class="notice notice-amber"><span>!</span><div><strong>Year alignment matters</strong><p>This workspace focuses on tax year 2026. The SEE testing cycle and exam question tax year may differ. Always check the current PSI Candidate Information Bulletin and IRS updates before an exam or filing.</p></div></div>
+          <div class="section-heading"><div><span class="eyebrow">YOUR CONTROL CENTER</span><h2>Choose a learning path</h2></div><span class="muted">Start with the foundations</span></div>
+          <div class="path-grid">
+            <button class="path-card" data-go="forms"><span class="path-icon blue">▤</span><span class="path-meta">REFERENCE LIBRARY</span><strong>IRS Forms & Schedules</strong><p>Understand what each form reports and where the numbers flow.</p><span class="path-link">Browse directory →</span></button>
+            <button class="path-card" data-go="individuals"><span class="path-icon violet">◎</span><span class="path-meta">SEE PART 1</span><strong>Individual taxation</strong><p>Filing status, gross income, deductions, credits and payments.</p><span class="path-link">Study individuals →</span></button>
+            <button class="path-card" data-go="business"><span class="path-icon green">▦</span><span class="path-meta">SEE PART 2</span><strong>Business taxation</strong><p>Entity returns, business income, basis, depreciation and payroll.</p><span class="path-link">Study businesses →</span></button>
+            <button class="path-card" data-go="representation"><span class="path-icon orange">⚖</span><span class="path-meta">SEE PART 3</span><strong>Representation & ethics</strong><p>Practice rights, Circular 230, penalties and IRS procedures.</p><span class="path-link">Study representation →</span></button>
+          </div>
+          <div class="section-heading"><div><span class="eyebrow">QUICK REFERENCE</span><h2>2026 numbers to know</h2></div><span class="source-note">Federal · Tax year 2026</span></div>
+          <div class="metric-grid" id="overview-metrics"></div>
+          <div class="bottom-grid"><article class="panel"><div class="panel-head"><div><span class="eyebrow">LEARN BY DOING</span><h3>Practice makes the rule stick</h3></div><span class="panel-symbol">⌁</span></div><p>Use worked examples and short knowledge checks to connect tax rules to return preparation.</p><button class="btn btn-primary" data-go="practice">Open practice lab →</button></article><article class="panel panel-dark"><span class="eyebrow light">EXAM STRUCTURE</span><h3>Three parts.<br>One professional credential.</h3><p>Individuals · Businesses · Representation, Practices & Procedures.</p><button class="btn btn-outline-light" data-go="blueprint">Explore the blueprint →</button></article></div>
+        </section>
+
+        <section id="page-forms" class="page">
+          <div class="page-intro"><span class="eyebrow">REFERENCE LIBRARY / FORMS</span><h1>IRS Forms & Schedules</h1><p>Search by form number, form family, recipient, filing purpose or tax concept.</p></div>
+          <div class="filter-row"><div class="local-search"><span>⌕</span><input id="form-search" placeholder="Filter this directory…"></div><div class="filter-chips" id="form-filters"></div></div>
+          <div class="results-line"><span id="form-result-count"></span><span>Choose a form to open its study note</span></div>
+          <div class="form-layout"><div id="form-list" class="form-list"></div><article id="form-detail" class="form-detail"><div class="empty-state"><span>▤</span><h3>Select a form</h3><p>Purpose, filing responsibility, return flow and exam notes will appear here.</p></div></article></div>
+        </section>
+
+        <section id="page-individuals" class="page">
+          <div class="page-intro"><span class="eyebrow">SEE PART 1 · INDIVIDUALS</span><h1>Individual taxation</h1><p>Move from the taxpayer’s filing profile to income, adjustments, deductions, credits and the final tax calculation.</p></div>
+          <div class="tab-row" data-tabs="individual"><button class="tab active" data-tab="filing">Filing status</button><button class="tab" data-tab="income">Income & adjustments</button><button class="tab" data-tab="retirement">Retirement</button><button class="tab" data-tab="credits">Tax credits</button></div>
+          <div id="individual-content"></div>
+        </section>
+
+        <section id="page-business" class="page">
+          <div class="page-intro"><span class="eyebrow">SEE PART 2 · BUSINESSES</span><h1>Business taxation</h1><p>Understand classification, business income, entity returns, deductions and the flow from books to federal tax forms.</p></div>
+          <div id="business-content"></div>
+        </section>
+
+        <section id="page-jurisdictions" class="page">
+          <div class="page-intro"><span class="eyebrow">TAX SYSTEM FOUNDATIONS</span><h1>Tax jurisdictions & tax types</h1><p>Identify who imposes a tax, what event triggers it and which government administers it.</p></div>
+          <div id="jurisdiction-content"></div>
+        </section>
+
+        <section id="page-representation" class="page">
+          <div class="page-intro"><span class="eyebrow">SEE PART 3 · PRACTICE & PROCEDURE</span><h1>Representation, ethics & procedure</h1><p>Practice before the IRS requires technical competence, procedural discipline and professional conduct.</p></div>
+          <div id="representation-content"></div>
+        </section>
+
+        <section id="page-calendar" class="page">
+          <div class="page-intro"><span class="eyebrow">PLANNING TOOL</span><h1>2026 tax calendar</h1><p>Common federal deadlines for calendar-year individuals and entities. Weekend, holiday, disaster and fiscal-year rules can change a due date.</p></div>
+          <div id="calendar-content"></div>
+        </section>
+
+        <section id="page-flashcards" class="page">
+          <div class="page-intro"><span class="eyebrow">ACTIVE RECALL</span><h1>Flashcard studio</h1><p>Retrieve the rule before revealing the explanation. Mark each card for your next revision pass.</p></div>
+          <div id="flashcard-content"></div>
+        </section>
+
+        <section id="page-blueprint" class="page">
+          <div class="page-intro"><span class="eyebrow">EXAM STRATEGY</span><h1>EA exam blueprint</h1><p>The Special Enrollment Examination tests three knowledge domains. Use the current candidate bulletin for exact topic weights and testing policies.</p></div>
+          <div id="blueprint-content"></div>
+        </section>
+
+        <section id="page-practice" class="page">
+          <div class="page-intro"><span class="eyebrow">APPLY THE CONCEPTS</span><h1>Practice lab</h1><p>Short calculations with transparent steps. These are learning examples, not personalized tax calculations.</p></div>
+          <div id="practice-content"></div>
+        </section>
+        <footer class="page-footer"><span>TaxAtlas · Independent tax education</span><span>Verify current law, forms and instructions at <a href="https://www.irs.gov" target="_blank" rel="noreferrer">IRS.gov</a>.</span></footer>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
